@@ -1,5 +1,5 @@
 // if we're in development, we require an specific configuration located at '.env'
-// at production, that configuration is setted directly adn we don't use that file
+// at production, that configuration is setted directly and we don't use that file
 if (process.env.NODE_ENV === 'development') {
     require('dotenv').config()
 }
