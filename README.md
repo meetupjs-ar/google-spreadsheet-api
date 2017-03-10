@@ -1,6 +1,6 @@
 # google-spreadsheet-api
 
-Microservicio que devuelve un JSON con los datos de la primer hoja de una Google Spreadsheet. Usa `memory-cache` para storear los resultados durante el tiempo indicado por configuración
+Microservicio que devuelve un JSON con los datos de una hoja de una Google Spreadsheet
 
 ## Live
 
@@ -8,7 +8,7 @@ Microservicio que devuelve un JSON con los datos de la primer hoja de una Google
 
 ## Motivación
 
-Usar una Google Spreadsheet como DB. Para lograrlo, [es necesario seguir estos pasos](https://support.google.com/docs/answer/37579)
+Usar una Google Spreadsheet como DB para el [calendario de eventos](https://github.com/meetupjs-ar/calendario-de-meetups). Para lograrlo, primero es necesario [seguir estos pasos](https://support.google.com/docs/answer/37579)
 
 ## Desarrollo
 
