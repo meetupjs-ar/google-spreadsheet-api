@@ -892,7 +892,7 @@ memory-cache@^0.1.6:
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/memory-cache/-/memory-cache-0.1.6.tgz#2ed9933ed7a8c718249be7366f7ca8749acf8a24"
 
-micro-cors@0.0.1:
+micro-cors@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/micro-cors/-/micro-cors-0.0.1.tgz#f3e1f85936e33bf15d321ba57938a6407e1976fa"
 
