@@ -2,17 +2,18 @@
 
 Microservicio que devuelve un JSON con los datos de una hoja de una Google Spreadsheet
 
-## Live
-
 [google-spreadsheet-api](http://spreadsheet-api.now.sh/)
 
-## Motivación
+## Como funciona
 
-Usar una Google Spreadsheet como DB para el [calendario de eventos](https://github.com/meetupjs-ar/calendario-de-meetups). Para lograrlo, primero es necesario [seguir estos pasos](https://support.google.com/docs/answer/37579)
+> Nota: Para usar una Google Spreadsheet como base de datos, es necesario crear una planilla y "Publicarla en la web", pasos que se pueden seguir [en este link](https://support.google.com/docs/answer/37579)
+
+* Usa [gsheets](https://github.com/interactivethings/gsheets) para obtener los datos de la planilla
+* Usa [memory-cache](https://github.com/ptarjan/node-cache) para almacenar los resultados por un tiempo determinado (indicado por configuración), para que no se estén haciendo pedidos todo el tiempo
 
 ## Desarrollo
 
-Duplicar el archivo `.env-template`, nombrarlo como `.env` y reemplazar por los valores que se necesiten
+> Antes de empezar, duplicar el archivo `.env-template`, nombrarlo como `.env` y reemplazar por los valores que se necesiten
 
 ```bash
 # npm install
@@ -24,6 +25,6 @@ npm run start-dev
 
 [ToDo list](https://github.com/meetupjs-ar/google-spreadsheet-api/projects/1)
 
-## License
+## Licencia
 
 MIT

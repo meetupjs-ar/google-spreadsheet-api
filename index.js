@@ -1,10 +1,9 @@
-// if we're in development, we require an specific configuration located at '.env'
-// at production, that configuration is setted directly and we don't use that file
+// si estamos en desarrollo, requerimos el archivo '.env'
+// en producción, esa configuración se recibe directamente como variables de entorno
 if (process.env.NODE_ENV === 'development') {
     require('dotenv').config()
 }
 
-// 'gsheets' needs this polyfill
 require('isomorphic-fetch')
 
 const cache = require('memory-cache')
@@ -19,18 +18,21 @@ const cors = microCors({
 
 async function handler (req, res) {
     try {
-        // we look for the data in the memory cache
-        // if it's not present, we fetch, format and store the data into the cache
+        // si el resultado del API no fue previamente cacheado
         if (!cache.get('data')) {
+            // buscamos los datos de la planilla y hoja indicado
             const worksheet = await gsheets.getWorksheetById(process.env.SPREADSHEET_ID, process.env.WORKSHEET_ID)
+            // obtenemos el array de filas donde la propiedad 'date' necesita ser convertida a una
+            // fecha en JavaScript porque en la planilla se escriben con otro formato
             const data = worksheet.data.map(row => Object.assign({}, row, { date: new Date(row.date) }))
 
+            // guardamos los datos en cache por el tiempo indicado por configuración
             cache.put('data', data, cacheExpiration)
         }
 
         send(res, 200, cache.get('data'))
     } catch (error) {
-        send(res, 500, `Ups! Hubo un error al obtener los datos\n\n${error.message}`)
+        send(res, 500, error.message)
     }
 }
 

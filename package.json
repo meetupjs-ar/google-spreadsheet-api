@@ -1,7 +1,6 @@
 {
   "name": "google-spreadsheet-api",
   "version": "1.0.0",
-  "description": "Microservicio que devuelve un JSON con los datos de la primer hoja de una Google Spreadsheet",
   "main": "index.js",
   "scripts": {
     "precommit": "eslint '**/*.js'",
