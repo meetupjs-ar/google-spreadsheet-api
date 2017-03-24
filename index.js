@@ -6,6 +6,7 @@ if (process.env.NODE_ENV === 'development') {
 
 require('isomorphic-fetch')
 
+const formatEvents = require('./lib/format-events')
 const cache = require('memory-cache')
 const gsheets = require('gsheets')
 const microCors = require('micro-cors')
@@ -22,9 +23,8 @@ async function handler (req, res) {
         if (!cache.get('data')) {
             // buscamos los datos de la planilla y hoja indicado
             const worksheet = await gsheets.getWorksheetById(process.env.SPREADSHEET_ID, process.env.WORKSHEET_ID)
-            // obtenemos el array de filas donde la propiedad 'date' necesita ser convertida a una
-            // fecha en JavaScript porque en la planilla se escriben con otro formato
-            const data = worksheet.data.map(row => Object.assign({}, row, { date: new Date(row.date) }))
+            // formateamos la lista de eventos para que tenga solo los datos que necesitamos
+            const data = formatEvents(worksheet.data)
 
             // guardamos los datos en cache por el tiempo indicado por configuración
             cache.put('data', data, cacheExpiration)
