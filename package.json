@@ -24,5 +24,9 @@
     "babel-eslint": "^7.1.1",
     "eslint": "^3.17.1",
     "husky": "^0.13.2"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/meetupjs-ar/google-spreadsheet-api.git"
   }
 }
