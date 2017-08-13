@@ -18,7 +18,7 @@ Microservicio que devuelve un JSON con los datos de una hoja de una Google Sprea
 ```bash
 # npm install
 yarn install
-npm run start-dev
+npm run dev
 ```
 
 ## Licencia
