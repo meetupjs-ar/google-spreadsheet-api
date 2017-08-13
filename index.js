@@ -17,12 +17,15 @@ const cors = microCors({
     allowMethods: ['GET']
 })
 
-async function handler (req, res) {
+async function handler(req, res) {
     try {
         // si el resultado del API no fue previamente cacheado
         if (!cache.get('data')) {
             // buscamos los datos de la planilla y hoja indicado
-            const worksheet = await gsheets.getWorksheetById(process.env.SPREADSHEET_ID, process.env.WORKSHEET_ID)
+            const worksheet = await gsheets.getWorksheetById(
+                process.env.SPREADSHEET_ID,
+                process.env.WORKSHEET_ID
+            )
             // formateamos la lista de eventos para que tenga solo los datos que necesitamos
             const data = formatEvents(worksheet.data)
 

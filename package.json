@@ -1,32 +1,31 @@
 {
-  "name": "google-spreadsheet-api",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "dev": "NODE_ENV=development micro -p ${PORT:-4001}",
-    "precommit": "eslint '**/*.js'",
-    "start": "micro",
-    "start-dev": "nodemon --exec npm run dev"
-  },
-  "author": "durancristhian@gmail.com",
-  "license": "MIT",
-  "dependencies": {
-    "dotenv": "^4.0.0",
-    "gsheets": "^2.0.0",
-    "isomorphic-fetch": "^2.2.1",
-    "memory-cache": "^0.1.6",
-    "micro": "^7.0.6",
-    "micro-cors": "^0.0.1",
-    "moment-msdate": "^0.2.0",
-    "nodemon": "^1.11.0"
-  },
-  "devDependencies": {
-    "babel-eslint": "^7.1.1",
-    "eslint": "^3.17.1",
-    "husky": "^0.13.2"
-  },
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/meetupjs-ar/google-spreadsheet-api.git"
-  }
+    "name": "google-spreadsheet-api",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "dev": "NODE_ENV=development micro-dev -p ${PORT:-4001}",
+        "precommit": "eslint '**/*.js'",
+        "start": "micro"
+    },
+    "author": "durancristhian@gmail.com",
+    "license": "MIT",
+    "dependencies": {
+        "dotenv": "^4.0.0",
+        "gsheets": "^2.0.0",
+        "isomorphic-fetch": "^2.2.1",
+        "memory-cache": "^0.1.6",
+        "micro": "^8.0.2",
+        "micro-cors": "^0.0.1",
+        "moment-msdate": "^0.2.0"
+    },
+    "devDependencies": {
+        "babel-eslint": "^7.1.1",
+        "eslint": "^3.17.1",
+        "husky": "^0.13.2",
+        "micro-dev": "^1.2.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/meetupjs-ar/google-spreadsheet-api.git"
+    }
 }
