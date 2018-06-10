@@ -1,0 +1,23 @@
+sudo: false
+language: node_js
+cache:
+  directories:
+    - node_modules
+notifications:
+  email: false
+script:
+  - npm run precommit
+before_deploy:
+  - npm i now --no-save
+deploy:
+  provider: script
+  script: npm run deploy
+  skip_cleanup: true
+  on:
+    branch: master
+after_deploy:
+  - npm run clean-deploys
+  - npm run scale
+env:
+  matrix:
+    - CACHE_EXPIRATION=900000 INSTANCE_NAME='spreadsheet-api'
