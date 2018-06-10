@@ -35,7 +35,10 @@ async function handler(req, res) {
 
         send(res, 200, cache.get('data'))
     } catch (error) {
-        send(res, 500, error.message)
+        send(res, 500, {
+            env: process.env,
+            message: error.message
+        })
     }
 }
 
