@@ -4,7 +4,7 @@
     "main": "index.js",
     "scripts": {
         "clean-deploys": "now rm $INSTANCE_NAME --safe --token $NOW_TOKEN --yes",
-        "deploy": "now alias $(now --name $INSTANCE_NAME -e CACHE_EXPIRATION=900000 -e SPREADSHEET_ID=$SPREADSHEET_ID -e WORKSHEET_ID=$WORKSHEET_ID --npm --token $NOW_TOKEN) $INSTANCE_NAME --token=$NOW_TOKEN",
+        "deploy": "now alias $(now --name $INSTANCE_NAME -e CACHE_EXPIRATION=$CACHE_EXPIRATION -e SPREADSHEET_ID=$SPREADSHEET_ID -e WORKSHEET_ID=$WORKSHEET_ID --npm --token $NOW_TOKEN) $INSTANCE_NAME --token=$NOW_TOKEN",
         "dev": "NODE_ENV=development micro-dev -p ${PORT:-4001}",
         "precommit": "eslint '**/*.js'",
         "scale": "now scale $INSTANCE_NAME'.now.sh' 1 --token $NOW_TOKEN",

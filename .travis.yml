@@ -18,6 +18,3 @@ deploy:
 after_deploy:
   - npm run clean-deploys
   - npm run scale
-env:
-  matrix:
-    - INSTANCE_NAME='spreadsheet-api'
