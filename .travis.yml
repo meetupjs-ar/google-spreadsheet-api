@@ -20,4 +20,4 @@ after_deploy:
   - npm run scale
 env:
   matrix:
-    - CACHE_EXPIRATION=900000 INSTANCE_NAME='spreadsheet-api'
+    - INSTANCE_NAME='spreadsheet-api'
