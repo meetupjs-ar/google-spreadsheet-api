@@ -7,7 +7,6 @@
         "deploy": "now alias $(now --name $INSTANCE_NAME -e CACHE_EXPIRATION=$CACHE_EXPIRATION -e NODE_ENV=production -e SPREADSHEET_ID=$SPREADSHEET_ID -e WORKSHEET_ID=$WORKSHEET_ID --npm --token $NOW_TOKEN) $INSTANCE_NAME --token=$NOW_TOKEN",
         "dev": "micro-dev -p ${PORT:-4001}",
         "precommit": "eslint '**/*.js'",
-        "scale": "now scale $INSTANCE_NAME'.now.sh' sfo 1 --token $NOW_TOKEN",
         "start": "micro"
     },
     "author": "durancristhian@gmail.com",
