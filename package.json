@@ -6,8 +6,7 @@
         "clean-deploys": "now rm $INSTANCE_NAME --token $NOW_TOKEN --yes",
         "deploy": "now alias $(now --name $INSTANCE_NAME -e CACHE_EXPIRATION=$CACHE_EXPIRATION -e SPREADSHEET_ID=$SPREADSHEET_ID -e WORKSHEET_ID=$WORKSHEET_ID --npm --token $NOW_TOKEN) $INSTANCE_NAME --token=$NOW_TOKEN",
         "dev": "micro-dev -p ${PORT:-4001}",
-        "precommit": "eslint '**/*.js'",
-        "scale": "now scale $INSTANCE_NAME 1 --token $NOW_TOKEN",
+        "scale": "now scale $INSTANCE_NAME.now.sh 1 --token $NOW_TOKEN",
         "start": "micro"
     },
     "author": "durancristhian@gmail.com",
@@ -17,18 +16,23 @@
         "gsheets": "^2.0.0",
         "isomorphic-fetch": "^2.2.1",
         "memory-cache": "^0.2.0",
-        "micro": "^9.3.2",
-        "micro-cors": "^0.1.0",
+        "micro": "^9.3.3",
+        "micro-cors": "^0.1.1",
         "moment-msdate": "^2.0.1"
     },
     "devDependencies": {
-        "babel-eslint": "^8.2.3",
-        "eslint": "^4.19.1",
-        "husky": "^0.14.3",
+        "babel-eslint": "^10.0.1",
+        "eslint": "^5.6.1",
+        "husky": "^1.1.1",
         "micro-dev": "^3.0.0"
     },
     "repository": {
         "type": "git",
         "url": "https://github.com/meetupjs-ar/google-spreadsheet-api.git"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "eslint '**/*.js'"
+        }
     }
 }
