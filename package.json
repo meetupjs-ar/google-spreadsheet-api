@@ -1,6 +1,6 @@
 {
     "name": "google-spreadsheet-api",
-    "version": "1.0.2",
+    "version": "1.1.0",
     "main": "index.js",
     "scripts": {
         "clean-deploys": "now rm $INSTANCE_NAME --safe --token $NOW_TOKEN --yes",
